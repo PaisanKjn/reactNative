@@ -1,4 +1,4 @@
 StudentID: 2113110619
 StudentName: Paisan Kiatjanon
-DatetoStudy: 24 June 2023
-ClassTopic: Introduction to ReactNative & Javascript (again?)
+DatetoStudy: 15 July 2023
+ClassTopic: React Native Component & React Hook
