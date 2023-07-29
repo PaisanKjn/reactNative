@@ -1,20 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import TouchableExample from './components/TouchableExample'
+import styles from './components/styles'
 
 const App = () => {
   return (
     <View style = {styles.container}>
-      <TouchableExample/>
+      <Text style = {styles.row}>React</Text>
+      <Text style = {styles.row}> Native</Text>
     </View>
   )
 }
 
 export default App
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center'
-  }
-})
+//const styles = StyleSheet.create({})
