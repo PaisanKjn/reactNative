@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacityBase, Image } from "react-native";
 import React from "react";
-import RandomUsersScreen from "./components/RandomUsersScreen";
+import FlatList_HeaderFooter from "./components/FlatList_HeaderFooter";
 
 const App = () => {
   return (
     <View>
-      <RandomUsersScreen/>
+      <FlatList_HeaderFooter/>
     </View>
   );
 };
 
 export default App;
-
 const styles = StyleSheet.create({});
