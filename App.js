@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacityBase, Image } from "react-native";
 import React from "react";
-import UseEffectFlatList from "./components/UseEffectFlatList";
+import RandomUsersScreen from "./components/RandomUsersScreen";
 
 const App = () => {
   return (
     <View>
-      <UseEffectFlatList/>
+      <RandomUsersScreen/>
     </View>
   );
 };
