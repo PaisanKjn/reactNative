@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacityBase, Image } from "react-native";
 import React from "react";
-import FlatList_HeaderFooter from "./components/FlatList_HeaderFooter";
-
+import NewsAPI from "./components/NewsAPI";
 const App = () => {
   return (
     <View>
-      <FlatList_HeaderFooter/>
+      <NewsAPI/>
     </View>
   );
 };
