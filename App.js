@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, TouchableHighlight, TouchableOpacityBase, Image } from "react-native";
 import React from "react";
-import NewsAPI from "./components/NewsAPI";
+import ProductScreen from "./components/ProductScreen";
 const App = () => {
   return (
     <View>
-      <NewsAPI/>
+      <ProductScreen/>
     </View>
   );
 };
