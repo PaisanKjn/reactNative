@@ -1,4 +1,4 @@
 StudentID: 2113110619
 StudentName: Paisan Kiatjanon
-DatetoStudy: 2 Sep 2023
-ClassTopic: React Navigator : Stack Navigator
+DatetoStudy: 9 Sep 2023
+ClassTopic: React Navigator : Passing parameters to routes, Drawer Navigator
