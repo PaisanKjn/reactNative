@@ -2,9 +2,9 @@ import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
-import ThirdPage from "./pages/ThirdPage";
+import "react-native-gesture-handler";
+import CreatePostScreen from "./screens/CreatePostScreen";
+import IndexScreen from "./screens/IndexScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        mode="modal"
         screenOptions={{
           headerStyle: {
             backgroundColor: "#7AAAAA",
@@ -24,20 +24,11 @@ const App = () => {
         }}
       >
         <Stack.Screen
-          name="first"
-          component={FirstPage}
-          options={{ title: "FirstPage" }}
+          name="Index"
+          component={IndexScreen}
+          options={{ title: "Main Page" }}
         />
-        <Stack.Screen
-          name="second"
-          component={SecondPage}
-          options={{ title: "SecondPage" }}
-        />
-        <Stack.Screen
-          name="third"
-          component={ThirdPage}
-          options={{ title: "ThirdPage" }}
-        />
+        <Stack.Screen name="CreatePost" component={CreatePostScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
