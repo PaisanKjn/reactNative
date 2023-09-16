@@ -5,9 +5,6 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import FirstPage from './pages/FirstPage'
 import SecondPage from './pages/SecondPage'
-import ThirdPage from './pages/ThirdPage'
-import FirstScreenStack from './screens/FirstScreenStack';
-import SecondScreenStack from './screens/SecondScreenStack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Drawer= createDrawerNavigator();
