@@ -1,71 +1,80 @@
 import { View, Text } from "react-native";
 import React from "react";
-import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import FirstPage from "./pages/FirstPage";
-import SecondPage from "./pages/SecondPage";
-import CustomSIdeBarMenu from "./pages/CustomSIdeBarMenu";
-import { createNativeStackNavigator, } from "@react-navigation/native-stack";
-
-const Drawer = createDrawerNavigator();
-const Stack = createNativeStackNavigator();
-
-function MyDrawer() {
-  function FirstStack() {
-    return (
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="first" component={FirstPage} />
-      </Stack.Navigator>
-    );
-  }
-
-  function SecondStack() {
-    return (
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="second" component={SecondPage} />
-      </Stack.Navigator>
-    );
-  }
-
-  return (
-    <Drawer.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#111111",
-        },
-        headerTitleStyle: {
-          fontWeight: "bold",
-          color: "#fff",
-        },
-        drawerStyle: {
-          backgroundColor: "#3C687A",
-        },
-        drawerActiveBackgroundColor: "#fff",
-        drawerActiveTintColor: "#3C687A",
-        drawerInactiveTintColor: "#fff",
-        headerTintColor: "white",
-      }}
-      drawerContent = {(props) => <CustomSIdeBarMenu {...props}/>}
-    >
-      <Drawer.Screen
-        name="first"
-        component={FirstStack}
-        options={{ title: "First Stack" }}
-      />
-      <Drawer.Screen
-        name="second"
-        component={SecondStack}
-        options={{ title: "Second Stack" }}
-      />
-    </Drawer.Navigator>
-  );
-}
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 const App = () => {
+  const Tab = createMaterialBottomTabNavigator();
+  function Feed() {
+    return (
+      <View>
+        <Text>Feed</Text>
+      </View>
+    );
+  }
+
+  function Profile() {
+    return (
+      <View>
+        <Text>Profile</Text>
+      </View>
+    );
+  }
+
+  function Notification() {
+    return (
+      <View>
+        <Text>Notif</Text>
+      </View>
+    );
+  }
+
+  function MyTabs() {
+    return (
+      <Tab.Navigator
+        initialRouteName="Feed"
+        activeColor="#e91"
+        labelStyle={{ fontSize: 12 }}
+        style={{ backgroundColor: "pearl" }}
+      >
+        <Tab.Screen
+          name="Feed"
+          component={Feed}
+          options={{
+            tabBarLabel: "Home",
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="home" color={color} size={26} />
+            ),
+          }}
+        />
+
+        <Tab.Screen
+          name="Notification"
+          component={Notification}
+          options={{
+            tabBarLabel: "Updates",
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="bell" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+        name = 'Profile'
+        component={Profile}
+        options = {{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({color}) => (<MaterialCommunityIcons name = 'account' color = {color} size={26}/>)
+        }}
+        />
+      </Tab.Navigator>
+    );
+  }
+
   return (
     <NavigationContainer>
-      <MyDrawer />
+      <MyTabs />
     </NavigationContainer>
   );
 };
